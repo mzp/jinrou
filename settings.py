@@ -28,10 +28,11 @@ TEMPLATE_DIRS = (
 USE_I18N = False
 DEFAULT_LANG = 'en'
 
-INSTALLED_APPS = (
+INSTALLED_APPS = ('main'
 )
 
 APP_MOUNT_POINTS = {
+'main': '/'
 }
 
 # You can remove following settings if unnecessary.
