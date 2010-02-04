@@ -2,9 +2,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Top Page - main</title>
+<title>Jinrou 2.0</title>
 </head>
 <body>
-{{ message }}
+<h1>Jinrou</h1>
+
+<h2>available village</h2>
+<table border="1">
+<thead>
+<tr>
+<th>{{ _("name") }}</th>
+<th>{{ _("capacity") }}</th>
+<th>{{ _("nighttime") }}</th>
+<th>{{ _("daytime") }}</th>
+<th>{{ _("description") }}</th>
+</tr>
+</thead>
+<tbody>
+{% for village in villages %}
+<tr>
+ <th><a href="/village/{{ village.key().id() }}">{{ village.name }}</a></th>
+ <td>{{ village.capacity }}</td>
+ <td>{{ village.nighttime }}</td>
+ <td>{{ village.daytime }}</td>
+ <td>{{ village.description }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<h2>create village</h2>
+{{ form() | safe }}
 </body>
 </html>
